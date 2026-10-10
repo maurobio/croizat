@@ -3,9 +3,9 @@ A Software Package for Quantitative Analysis in Panbiogeography
 
 
 
-***Croizat*** is a freely available cross-platform software package for mapping analyzing biodiversity data using a graph-theoretic, quantitative panbiogeographic approach.
+***Croizat*** is a freely available 64-bit cross-platform software package for mapping and analyzing biodiversity data using a graph-theoretic, quantitative panbiogeographic approach.
 
-​	Panbiogeography provides a method for analyzing the geographic structure of species distributions in order to generate predictions about the evolution of biological organisms in space and time.
+​	Panbiogeography, as conceived by the French-Italian botanist Léon Croizat (1894-1982), provides a method for analyzing the geographic structure of species distributions in order to generate predictions about the evolution of biological organisms in space and time.
 
 ​	The software is written in Python, an interpreted, interactive, object-oriented programming language, very suitable for scientific computing, and includes external libraries that are also written in Python and C/C++. Therefore, the program is platform-independent, running without modifications on any PC compatible with the x86 architecture, under GNU/Linux, MS-Windows, and Mac OS X. 
 
