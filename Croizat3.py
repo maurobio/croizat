@@ -61,6 +61,8 @@
 #      * Updated code to the new PyShp API                                        #
 #   Version 2.50, 5 Oct 2026 - Sixth public release ("Flores-Soembawa")           #
 #      * Updated to Python3, PyQt6, NumPy2, Matplotlib3, Basemap2                 # 
+#      * The program is now a fully 64-bit application; support for 32-bit        #
+#        operating systems has been dropped                                       #
 #=================================================================================#
 
 import sys
@@ -105,13 +107,15 @@ def random_color():
 
 def get_basename(fname):
     return os.path.splitext(os.path.basename(fname))[0]
-
+  
 def getExecPath():
+    if getattr(sys, 'frozen', False):
+        return sys._MEIPASS
     try:
         sFile = os.path.abspath(sys.modules['__main__'].__file__)
-    except:
+    except Exception:
         sFile = sys.executable
-    return os.path.dirname(sFile)
+    return os.path.dirname(sFile)    
 
 def getIcon(name):
     # Images are stored in the images directory next to the program.
@@ -177,13 +181,12 @@ class ChecklistDialog(QtWidgets.QDialog):
 
         self.name = name
         self.icon = icon
-        #self.model = QtWidgets.QStandardItemModel()
         self.model = QStandardItemModel()
         self.listView = QtWidgets.QListView()
 
         if stringlist is not None:
             for string in stringlist:
-                item = QtGui.QStandardItem(string)
+                item = QStandardItem(string)
                 item.setCheckable(True)
                 check = QtCore.Qt.CheckState.Checked if checked else QtCore.Qt.CheckState.Unchecked
                 item.setCheckState(check)
@@ -340,21 +343,18 @@ class MainWindow(QtWidgets.QMainWindow):
         self.bluemarbleAction = QtGui.QAction("Blue Marble...", self, checkable=True,
                         statusTip="Display NASA Blue Marble image",
                         triggered=self.bluemarble)
-        ##self.imageMenu.addAction(self.bluemarbleAction)
         action = group.addAction(self.bluemarbleAction)
         self.imageMenu.addAction(action)
 
         self.etopomodelAction = QtGui.QAction("ETOPO Global Relief...", self, checkable=True,
                         statusTip="Display NOAA ETOPO Global Relief Model image",
                         triggered=self.etopo)
-        ##self.imageMenu.addAction(self.etopomodelAction)
         action = group.addAction(self.etopomodelAction)
         self.imageMenu.addAction(action)
 
         self.shadedreliefAction = QtGui.QAction("Shaded Relief...", self, checkable=True,
                         statusTip="Display shaded relief image",
                         triggered=self.shaded)
-        ##self.imageMenu.addAction(self.shadedreliefAction)
         action = group.addAction(self.shadedreliefAction)
         self.imageMenu.addAction(action)
 
@@ -451,7 +451,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setGeometry(100,100,650,350)
         self.addDockWidget(QtCore.Qt.DockWidgetArea.LeftDockWidgetArea, self.items)
         self.setWindowTitle("Croizat")
-        self.setWindowIcon(QtGui.QIcon())
+        self.setWindowIcon(getIcon("croizat.ico"))
         self.updateUI()
         self.showMaximized()
 
@@ -478,19 +478,19 @@ class MainWindow(QtWidgets.QMainWindow):
         editAction.setEnabled(self.listWidget.count() > 0)
         menu.addSeparator()
 
-        recordsAction = QtGui.QAction("View records", self, ##checkable=True,
+        recordsAction = QtGui.QAction("View records", self,
                         statusTip="Display all records",
                         triggered=self.displayRecords)
         menu.addAction(recordsAction)
         recordsAction.setEnabled(self.listWidget.count() > 0)
 
-        treesAction = QtGui.QAction("View individual tracks", self, ##checkable=True,
+        treesAction = QtGui.QAction("View individual tracks", self,
                         statusTip="Display individual tracks",
                         triggered=self.displayTrees)
         menu.addAction(treesAction)
         treesAction.setEnabled(self.listWidget.count() > 0)
 
-        tracksAction = QtGui.QAction("View generalized tracks", self, ##checkable=True,
+        tracksAction = QtGui.QAction("View generalized tracks", self,
                         statusTip="Display generalized tracks",
                         triggered=self.displayTracks)
         menu.addAction(tracksAction)
@@ -687,7 +687,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 headers[i] = headers[i].title().strip('\r')
         return headers, data
 
-    def importData(filename, infmt, outfmt):
+    def importData(self, filename, infmt, outfmt):
         infile = os.path.basename(str(filename))
         outfile = os.path.splitext(infile)[0] + "_imported_from_" + infmt
 
@@ -1021,7 +1021,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.canvas.draw_idle()
 
     def delFile(self):
-        if self.listWidget.count() > 0:
+        if self.listWidget.count() > 0 and self.listWidget.selectedIndexes():    
             index = self.listWidget.selectedIndexes()[0].row()
             item = self.listWidget.takeItem(index)
             filename = str(item.text())
@@ -1068,8 +1068,7 @@ class MainWindow(QtWidgets.QMainWindow):
                     QtWidgets.QMessageBox.warning(self, "Warning", "No records imported!")
                     return
                 else:
-                    QtWidgets.QMessageBox.information(self, "Information",
-                        "%d record(s) read, %d records imported." % (len(indata), recs))
+                    QtWidgets.QMessageBox.information(self, "Information", "%d records imported." % records)
 
                 if filename in self.filelist:
                     self.filelist.pop(filename)
@@ -1207,8 +1206,7 @@ class MainWindow(QtWidgets.QMainWindow):
         for filename in self.filelist:
             file_ext = filename[-3:]
             if file_ext in ["csv", "xls", "lsx", "ods", "dbf", "kml"]:
-                track_name = get_basename(str(filename)) + "_individualtrack.shp"
-                if track_name not in self.filelist.keys():
+                if get_basename(str(filename)) + "_individualtrack.shp" not in self.filelist:
                     datafiles.append(filename)
         if len(datafiles) == 0:
             QtWidgets.QMessageBox.warning(self, "Warning", "All tracks have already been computed!")
@@ -1220,6 +1218,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 QtWidgets.QMessageBox.warning(self, "Warning", "At least one data file must be selected!")
                 return False
             for s in form.choices:
+                attributes = []
                 headers, data = self.loadData(str(s))
                 if len(headers) == 0:
                     QtWidgets.QMessageBox.critical(self, "Error", "Missing header line in data file!")
@@ -1264,6 +1263,15 @@ class MainWindow(QtWidgets.QMainWindow):
                     # Save the minimum spanning tree
                     track_base = get_basename(str(s)) + "_individualtrack"
                     track_file = track_base + ".shp"
+                    
+                    for ext in ('.shp', '.shx', '.dbf', '.prj', '.cpg'):
+                        f = track_base + ext
+                        try:
+                            if os.path.exists(f):
+                                os.remove(f)
+                        except OSError:
+                            pass    
+                    
                     w = shapefile.Writer(track_base, shapeType=shapefile.POLYLINE)
                     w.line(edge_list)
                     w.field("COMMON_ID", 'C')
@@ -1279,9 +1287,8 @@ class MainWindow(QtWidgets.QMainWindow):
                     kml.save(track_base + ".kml")
 
                     # Plot the minimum spanning tree.
-                    # The layer name passed to readshapefile must not contain a dot,
-                    # because Basemap uses it as a filename base internally.
-                    layer_name = get_basename(track_file)   # "species1_individualtrack"
+                    # The layer name passed to readshapefile must not contain a dot.
+                    layer_name = get_basename(track_file)
                     self.shape_list[track_file] = self.map.readshapefile(
                         track_base, layer_name, linewidth=width, color=color)
                     self.shape_list[track_file][4].set_visible(True)
@@ -1303,8 +1310,6 @@ class MainWindow(QtWidgets.QMainWindow):
                 finally:
                     QtWidgets.QApplication.restoreOverrideCursor()
             self.statusBar().showMessage("Ready")
-            self.trackAction.setEnabled(len(self.filename) > 0)
-            self.gentrackAction.setEnabled(len(self.filename) > 0)
 
     def gentrack(self):
         datafiles = []
@@ -1375,7 +1380,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 self.statusBar().showMessage("Computing generalized tracks")
                 QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.CursorShape.WaitCursor)
-                mt05 = subprocess.call([self.dirname + "mt05-win32.exe", "output0.dat", "output0.kml", "params.dat"], shell=True)
+                mt05 = subprocess.call([self.dirname + "mt05-win64.exe", "output0.dat", "output0.kml", "params.dat"], shell=True)
                 QtWidgets.QApplication.restoreOverrideCursor()
                 self.statusBar().showMessage("Ready")
                 if mt05 != 0:
@@ -1402,15 +1407,17 @@ class MainWindow(QtWidgets.QMainWindow):
                             lines.append([(x0, x1),(y0, y1)])
                         lines = list(sorted(lines))
                         
-                        # Sanitize the KML name for use as a filename
-                        safe_name = "".join(
-                            c if c.isalnum() or c in "_-" else "_"
-                            for c in name)
-                        track_file = safe_name + ".shp"
+                        track_base = name
 
-                        # PyShp 2.x requires an explicit shape type
+                        for ext in ('.shp', '.shx', '.dbf', '.prj', '.cpg'):
+                            f = track_base + ext
+                            try:
+                                if os.path.exists(f):
+                                    os.remove(f)
+                            except OSError:
+                                pass
+
                         w = shapefile.Writer(name, shapeType=shapefile.POLYLINE)
-                        w.autoBalance = 1
                         w.line(lines)
                         w.field("COMMON_ID", 'C')
                         w.record("Point")
@@ -1421,13 +1428,9 @@ class MainWindow(QtWidgets.QMainWindow):
                         style = '-'
 
                         # Plot the generalized track
-                        self.shape_list[track_file] = self.map.readshapefile(safe_name, safe_name, linewidth=width, color=color)
-                        self.shape_list[track_file][4].set_visible(True)
-                        
-                        # Store proper 4-element attributes for saveProject/readProject
-                        self.filelist[track_file] = ['-', width, color]
-                        
-                        item = QtWidgets.QListWidgetItem(track_file)
+                        self.shape_list[name + ".shp"] = self.map.readshapefile(track_base, track_base, linewidth=width, color=color)
+                        self.filelist[name + ".shp"] = [style, width, color]
+                        item = QtWidgets.QListWidgetItem(name + ".shp")
                         item.setCheckState(QtCore.Qt.CheckState.Checked)
                         self.listWidget.addItem(item)
                         self.saveProject()
@@ -1501,6 +1504,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def mapresolution(self):
         items = ["crude", "low", "intermediate", "high"]
         matching = [s for s in items if any(xs in s for xs in self.resolution)]
+        if not matching:
+            matching = ['crude']
         pos = items.index(matching[0])
         options = [
                 ("Resolution:", [pos] + items),
@@ -1660,6 +1665,8 @@ class MainWindow(QtWidgets.QMainWindow):
                 all_data += data
         QtWidgets.QApplication.restoreOverrideCursor()
         match = [coord for coord in all_data if round(float(coord[2]),4) == x and round(float(coord[3]),4) == y]
+        if not match:
+            return
         recinfo = "Scientific Name: %s\n Location: %s\n Latitude: %f\n Longitude: %f" % (match[0][0], match[0][1], match[0][2], match[0][3])
         QtWidgets.QMessageBox.information(self, "Record Information", recinfo)
 
