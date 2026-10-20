@@ -1,4 +1,4 @@
-# ![icon](\images\icon.png)
+# <img src="images\icon.png" alt="icon" style="zoom:150%;" />
 
 # A Software Package for Quantitative Analysis in Panbiogeography
 
