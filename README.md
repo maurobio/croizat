@@ -1,4 +1,4 @@
-# ![icon](\images\icon.png)
+# ![icon](images\icon.png)
 
 # A Software Package for Quantitative Analysis in Panbiogeography
 
