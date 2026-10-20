@@ -1,7 +1,5 @@
-# Croizat
+# <img src="images\icon.jpg" alt="Croizat" style="zoom:150%;"/> 
 A Software Package for Quantitative Analysis in Panbiogeography
-
-
 
 ***Croizat*** is a freely available 64-bit cross-platform software package for mapping and analyzing biodiversity data using a graph-theoretic, quantitative panbiogeographic approach.
 
