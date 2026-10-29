@@ -41,6 +41,7 @@
 #      * Added Panbiotracks integration for generating generalized tracks and nodes #
 #      * Added confirmation dialog for removing files from project                  #
 #      * Added option for creating incidence matrices for PAE analysis              #
+#      * Added detection of point outliers in the data                              #
 #      * Changed shortcut for adding files to Ctrl+Ins                              #
 #      * Changed shortcut for deleting files to Ctrl+Del                            #
 #      * Changed file reading for better handling of table formatted data           #
