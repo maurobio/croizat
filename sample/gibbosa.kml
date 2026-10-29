@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>B. gibbosa.kml</name>
+	<StyleMap id="msn_ylw-pushpin314">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1592</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin441</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin15324">
+		<IconStyle>
+			<color>ff00aaaa</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin151410">
+		<IconStyle>
+			<color>ff00aaaa</color>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin16610">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin15324</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin151410</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin1592">
+		<IconStyle>
+			<color>ff00aaaa</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin441">
+		<IconStyle>
+			<color>ff00aaaa</color>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>B. gibbosa</name>
+		<visibility>0</visibility>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>La. de los Indios and La. Lo Encañado (33°40′S, 70°08′W)
+Brehm, 1936a</description>
+			<LookAt>
+				<longitude>-70.13346141871131</longitude>
+				<latitude>-33.66075347667339</latitude>
+				<altitude>0</altitude>
+				<range>12427.9967468858</range>
+				<tilt>0</tilt>
+				<heading>8.754003279546529</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin314</styleUrl>
+			<Point>
+				<coordinates>-70.13336123265678,-33.67206944444444,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>La. Negra
+Araya and Zúñiga, 1985</description>
+			<LookAt>
+				<longitude>-70.1402709844421</longitude>
+				<latitude>-33.62664045893026</latitude>
+				<altitude>0</altitude>
+				<range>15245.12079030251</range>
+				<tilt>0</tilt>
+				<heading>8.756440727361387</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin314</styleUrl>
+			<Point>
+				<coordinates>-70.1232845525965,-33.64353611111111,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>Lake near L. Todos los Santos
+Brehm, 1935c</description>
+			<LookAt>
+				<longitude>-71.94762985926165</longitude>
+				<latitude>-41.13347569409136</latitude>
+				<altitude>0</altitude>
+				<range>21111.41427995196</range>
+				<tilt>0</tilt>
+				<heading>10.04247475181708</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin314</styleUrl>
+			<Point>
+				<coordinates>-71.96671028554343,-41.140119775663,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>R. Manzanillo near Santiago
+Brehm, 1935c</description>
+			<LookAt>
+				<longitude>-70.59058564982588</longitude>
+				<latitude>-33.63433918526451</latitude>
+				<altitude>0</altitude>
+				<range>5217.217530297252</range>
+				<tilt>0</tilt>
+				<heading>9.006729231689512</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin314</styleUrl>
+			<Point>
+				<coordinates>-70.56648033983055,-33.62130150614056,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>La. Schmoll and La. Toncek
+Menu-Marque et al., 2000</description>
+			<LookAt>
+				<longitude>-71.46756668773172</longitude>
+				<latitude>-41.23385468041757</latitude>
+				<altitude>0</altitude>
+				<range>13819.13987507926</range>
+				<tilt>0</tilt>
+				<heading>1.527705617544254</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin16610</styleUrl>
+			<Point>
+				<coordinates>-71.43731474212815,-41.22753611111111,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>La. Jakob
+Menu-Marque et al., 2000</description>
+			<LookAt>
+				<longitude>-71.55203446986376</longitude>
+				<latitude>-41.18440275498227</latitude>
+				<altitude>0</altitude>
+				<range>8818.226513464284</range>
+				<tilt>0</tilt>
+				<heading>0.09789169726104732</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin16610</styleUrl>
+			<Point>
+				<coordinates>-71.56208609824229,-41.18839856049836,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>L. Frías
+Menu-Marque et al., 2000</description>
+			<LookAt>
+				<longitude>-71.78630313756023</longitude>
+				<latitude>-41.05370995824198</latitude>
+				<altitude>0</altitude>
+				<range>5880.685838228967</range>
+				<tilt>0</tilt>
+				<heading>11.41014411505966</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin16610</styleUrl>
+			<Point>
+				<coordinates>-71.79631745174912,-41.05781465099473,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>L. Los Cántaros
+Menu-Marque et al., 2000</description>
+			<LookAt>
+				<longitude>-71.81616995706841</longitude>
+				<latitude>-41.02119042672636</latitude>
+				<altitude>0</altitude>
+				<range>1975.139741245858</range>
+				<tilt>0</tilt>
+				<heading>11.17233977057862</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin16610</styleUrl>
+			<Point>
+				<coordinates>-71.80788416487734,-41.02184847356736,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>B. gibbosa</name>
+			<visibility>0</visibility>
+			<description>La. de los Horcones
+(32°40′S, 69°51′W).
+Menu-Marque et al., 2000</description>
+			<LookAt>
+				<longitude>-69.94377503442262</longitude>
+				<latitude>-32.80318280061596</latitude>
+				<altitude>0</altitude>
+				<range>1639.80501573483</range>
+				<tilt>16.9804929560041</tilt>
+				<heading>2.801237324506757</heading>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin16610</styleUrl>
+			<Point>
+				<coordinates>-69.9432297235531,-32.80560036571998,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

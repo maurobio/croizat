@@ -1,0 +1,57 @@
+[Title]
+title = Panbiogeografia de las Americas
+
+[Colors]
+land = #00ff00
+water = #00ffff
+border = #000000
+massingpalette = Yellow-Orange-Red
+
+[Options]
+borders = False
+rivers = False
+projection = cyl
+resolution = c
+
+[View]
+north = 90.0
+south = -90.0
+east = 180.0
+west = -180.0
+clat = 0.0
+clon = 0.0
+
+[Image]
+basemap = True
+bluemarble = False
+etopomodel = False
+shadedrelief = False
+scale = 0.25
+dpi = 100
+
+[Files]
+file0 = bradypus.xls,o,6,#000080,1
+file1 = bradypus_individualtrack.shp,-,2,#000080,0
+file2 = coendou.xlsx,o,6,#e9967a,1
+file3 = coendou_individualtrack.shp,-,2,#e9967a,0
+file4 = discus.ods,o,6,#ff69b4,1
+file5 = discus_individualtrack.shp,-,2,#ffaa00,0
+file6 = gibbosa.kml,o,6,#ff0000,1
+file7 = gibbosa_individualtrack.shp,-,2,#ff0000,0
+file8 = grizzly.csv,o,6,#aa0000,1
+file9 = grizzly_individualtrack.shp,-,2,#aa0000,0
+file10 = jabuti.csv,o,6,#8fbc8f,1
+file11 = jabuti_individualtrack.shp,-,2,#8fbc8f,0
+file12 = nothofagus.geojson,o,6,#ba55d3,1
+file13 = nothofagus_individualtrack.shp,-,2,#ba55d3,0
+file14 = potamotrygon.csv,o,6,#ffe4e1,1
+file15 = potamotrygon_individualtrack.shp,-,2,#ffe4e1,0
+file16 = scomber.csv,o,6,#ff00ff,1
+file17 = scomber_individualtrack.shp,-,2,#ff00ff,0
+file18 = sotalia.csv,o,6,#ee82ee,1
+file19 = sotalia_individualtrack.shp,-,2,#ee82ee,0
+file20 = strix.csv,o,6,#00aa7f,1
+file21 = strix_individualtrack.shp,-,2,#00aa7f,0
+file22 = zygo.csv,o,6,#87ceeb,1
+file23 = zygo_individualtrack.shp,-,2,#87ceeb,0
+

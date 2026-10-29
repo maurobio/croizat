@@ -1,0 +1,34 @@
+[Title]
+title = 
+
+[Colors]
+land = #00ff00
+water = #00ffff
+border = #000000
+
+[Options]
+borders = False
+rivers = False
+projection = cyl
+resolution = c
+
+[View]
+north = 90.0
+south = -90.0
+east = 180.0
+west = -180.0
+clat = 0.0
+clon = 0.0
+
+[Image]
+basemap = True
+bluemarble = True
+etopomodel = False
+shadedrelief = False
+scale = 0.5
+dpi = 100
+
+[Files]
+file0 = nodes.csv,o,6,#d8bfd8,1
+file1 = nodes_individualtrack.shp,-,2,#d8bfd8,1
+

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_41">
+        <Style id="stylesel_39">
+            <LineStyle id="substyle_39">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_40">
+            <LineStyle id="substyle_40">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_41">
+            <LineStyle id="substyle_41">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_42">
+            <LineStyle id="substyle_42">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_43">
+            <LineStyle id="substyle_43">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_44">
+            <LineStyle id="substyle_44">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_45">
+            <LineStyle id="substyle_45">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_46">
+            <LineStyle id="substyle_46">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_47">
+            <LineStyle id="substyle_47">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="feat_42">
+            <name>Track1</name>
+            <styleUrl>#stylesel_39</styleUrl>
+            <LineString id="geom_39">
+                <coordinates>-69.949462890625,-4.210000038146973,0.0 -60.3513298034668,-2.394670009613037,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_43">
+            <name>Track2</name>
+            <styleUrl>#stylesel_40</styleUrl>
+            <LineString id="geom_40">
+                <coordinates>-60.3513298034668,-2.394670009613037,0.0 -60.3513298034668,-2.394670009613037,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_44">
+            <name>Track3</name>
+            <styleUrl>#stylesel_41</styleUrl>
+            <LineString id="geom_41">
+                <coordinates>-60.3513298034668,-2.394670009613037,0.0 -60.3513298034668,-2.394670009613037,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_45">
+            <name>Track4</name>
+            <styleUrl>#stylesel_42</styleUrl>
+            <LineString id="geom_42">
+                <coordinates>-60.3513298034668,-2.394670009613037,0.0 -58.70000076293945,6.400000095367432,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_46">
+            <name>Track5</name>
+            <styleUrl>#stylesel_43</styleUrl>
+            <LineString id="geom_43">
+                <coordinates>-58.70000076293945,6.400000095367432,0.0 -71.5,9.666669845581055,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_47">
+            <name>Track6</name>
+            <styleUrl>#stylesel_44</styleUrl>
+            <LineString id="geom_44">
+                <coordinates>-71.5,9.666669845581055,0.0 -71.5,9.666669845581055,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_48">
+            <name>Track7</name>
+            <styleUrl>#stylesel_45</styleUrl>
+            <LineString id="geom_45">
+                <coordinates>-71.5,9.666669845581055,0.0 -71.5,9.666669845581055,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_49">
+            <name>Track8</name>
+            <styleUrl>#stylesel_46</styleUrl>
+            <LineString id="geom_46">
+                <coordinates>-71.5,9.666669845581055,0.0 -71.5,9.666669845581055,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_50">
+            <name>Track9</name>
+            <styleUrl>#stylesel_47</styleUrl>
+            <LineString id="geom_47">
+                <coordinates>-71.5,9.666669845581055,0.0 -83.61805725097656,13.668055534362793,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>
