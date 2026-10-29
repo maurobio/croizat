@@ -12,4 +12,4 @@ It allows fast computing of individual tracks (created by the software itself us
 
 It can also find nodes (using *Panbiotracks*), generate maps of main massings, build incidence matrices for pasimony analysis of endemicity, detect outliers in data, and more. ESRI shapefiles, Google Earth KML, and GeoJSON files are supported as output.
 
-Last, but not least, the program offers an easy-to-use, interactive Graphical User Interface (GUI), with pulldown menus, dialog boxes, and other standard GUI controls,  similar to that of a Geographical Information System (GIS), without the need of using arcane command-line options.
+Another outstanding feature of the program is an easy-to-use, interactive Graphical User Interface (GUI), with pulldown menus, dialog boxes, and other standard GUI controls,  similar to that of a Geographical Information System (GIS), allowing the user to perform analyses and generate maps without the need of using arcane command-line options.
