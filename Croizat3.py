@@ -1,52 +1,52 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
-#=================================================================================#
-#  Croizat - A Software Package for Quantitative Analysis in Panbiogeography      #
-#                 Copyright 2003-2026 Mauro J. Cavalcanti                         #
-#                           maurobio@gmail.com                                    #
-#                                                                                 #
-#  This program is free software; you can redistribute it and/or modify           #
-#  it under the terms of the GNU General Public License as published by           #
-#  the Free Software Foundation; either version 3 of the License, or              #
-#  (at your option) any later version.                                            #
-#                                                                                 #
-#  This program is distributed in the hope that it will be useful,                #
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of                 #
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                  #
-#  GNU General Public License for more details.                                   #
-#                                                                                 #
-#  You should have received a copy of the GNU General Public License              #
-#  along with this program. If not, see <http://www.gnu.org/licenses/>.           #
-#                                                                                 #
-#  Requirements:                                                                  #
-#    Python 3.14+ (www.python.org)                                                #
-#    PyQt 6.11+ (www.riverbankcomputing.com/software/pyqt)                        #
-#    PyShp 3.1.6+ (github.com/GeospatialPython/pyshp)                             #
-#    NumPy 2.5.3+ (www.numpy.org)                                                 #
-#    Matplotlib 3.1.1+ (www.matplotlib.org)                                       #
-#    Basemap 2.0.0+ (www.matplotlib.org/basemap)                                  # 
-#    simplekml 1.3+ (www.simplekml.com)                                           #
-#    xlrd 1.1+ (www.python-excel.org)                                             #
-#    ezodf 0.2+ (pythonhosted.org/ezodf)                                          #
-#    xlwt 0.7+ (www.python-excel.org)                                             # 
-#    xlsxwriter 1.0+ (github.com/jmcnamara/XlsxWriter)                            #
-#    dbfpy3 4.2.3+ (github.com/frankyxhl/dbfpy3)                                  # 
-#    openpyxl 3.1.5+ (foss.heptapod.net/openpyxl/openpyxl)                        #
-#                                                                                 #
-#  REVISION HISTORY:                                                              #
-#    Version 3.00, 26 Oct 2026 - First public release ("Vancouver")               #
-#      * Added mapping of main msssings                                           #
-#      * Added MartiTracks console suppression                                    #
-#      * Added cross-platform (Linux/Windows) MartiTracks invocation              #
-#      * Added GeoJSON format support for point and line data                     #
-#      * Added Panbiotracks integration (generalized tracks and nodes)            #
-#      * Added confirmation dialog for removing files from project                #
-#      * Added option for creating binary matrices for PAE analysis               #
-#      * Changed shortcut for adding files to Ctrl+Ins                            #
-#      * Changed shortcut for deleting files to Ctrl+Del                          #
-#      * Changed file reading for better handling of table formatted data         #
-#      * Removed Import option from the main menu                                 $
-#=================================================================================#
+#===================================================================================#
+#  Croizat - A Software Package for Quantitative Analysis in Panbiogeography        #
+#                 Copyright 2003-2026 Mauro J. Cavalcanti                           #
+#                           maurobio@gmail.com                                      #
+#                                                                                   #
+#  This program is free software; you can redistribute it and/or modify             #
+#  it under the terms of the GNU General Public License as published by             #
+#  the Free Software Foundation; either version 3 of the License, or                #
+#  (at your option) any later version.                                              #
+#                                                                                   # 
+#  This program is distributed in the hope that it will be useful,                  #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of                   #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                    #
+#  GNU General Public License for more details.                                     #
+#                                                                                   #
+#  You should have received a copy of the GNU General Public License                #
+#  along with this program. If not, see <http://www.gnu.org/licenses/>.             #
+#                                                                                   #
+#  Requirements:                                                                    #
+#    Python 3.14+ (www.python.org)                                                  #
+#    PyQt 6.11+ (www.riverbankcomputing.com/software/pyqt)                          #
+#    PyShp 3.1.6+ (github.com/GeospatialPython/pyshp)                               #
+#    NumPy 2.5.3+ (www.numpy.org)                                                   #
+#    Matplotlib 3.1.1+ (www.matplotlib.org)                                         #
+#    Basemap 2.0.0+ (www.matplotlib.org/basemap)                                    # 
+#    simplekml 1.3+ (www.simplekml.com)                                             #
+#    xlrd 1.1+ (www.python-excel.org)                                               #
+#    ezodf 0.2+ (pythonhosted.org/ezodf)                                            #
+#    xlwt 0.7+ (www.python-excel.org)                                               # 
+#    xlsxwriter 1.0+ (github.com/jmcnamara/XlsxWriter)                              #
+#    dbfpy3 4.2.3+ (github.com/frankyxhl/dbfpy3)                                    # 
+#    openpyxl 3.1.5+ (foss.heptapod.net/openpyxl/openpyxl)                          #
+#                                                                                   #
+#  REVISION HISTORY:                                                                #
+#    Version 3.00, 26 Oct 2026 - First public release ("Vancouver")                 #
+#      * Added mapping of main msssings with choice of grid size and color palette  #
+#      * Added cross-platform (Linux/Windows) call to MartiTracks/Panbiotracks      #
+#      * Added GeoJSON format support for point and line data                       #
+#      * Added Panbiotracks integration for generating generalized tracks and nodes #
+#      * Added confirmation dialog for removing files from project                  #
+#      * Added option for creating incidence matrices for PAE analysis              #
+#      * Changed shortcut for adding files to Ctrl+Ins                              #
+#      * Changed shortcut for deleting files to Ctrl+Del                            #
+#      * Changed file reading for better handling of table formatted data           #
+#      * Removed Import option from the main menu                                   $
+#      * Fixed many minor bugs                                                      # 
+#===================================================================================#
 
 import sys
 import os
